@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-decorate="~{layouts/default-list-layout}">
+    <head id="head">
+
+    <title data-th-text="|#{label_show_entity(#{label_lesson})}|">Show Lesson - Spring Roo application</title>
+
+  </head>
+
+  <body id="body">
+
+    <header role="banner">
+      <!-- Content replaced by layout of the page displayed -->
+    </header>
+
+    <!--CONTAINER-->
+    <div class="container bg-container">
+      <!-- CONTENT -->
+      <!--
+        Only the inner content of the following tag "section" is included
+        within the template, in the section "content"
+      -->
+      <section data-th-fragment="inline-content" data-layout-fragment="content" data-th-object="${lesson}">
+        <div>
+
+          <!-- CONTENT -->
+            <div id="mainEntityFieldSet">
+              <ul class="list-unstyled" id="containerFields">
+                  <li id="lesson-day-field" data-z="a99d0ebb">
+            	      <strong data-th-text="#{label_lesson_day}">day</strong>
+                    <span data-th-text="*{{day}}">dayValue</span>
+         	        </li>
+                  <li id="lesson-instructor-field" data-z="e7aa2763">
+            	      <strong data-th-text="#{label_lesson_instructor}">instructor</strong>
+                    <span data-th-text="*{{instructor}}">instructorValue</span>
+         	        </li>
+                  <li id="lesson-room-field" data-z="a368e2a3">
+            	      <strong data-th-text="#{label_lesson_room}">room</strong>
+                    <span data-th-text="*{{room}}">roomValue</span>
+         	        </li>
+                  <li id="lesson-subject-field" data-z="d94ecebb">
+            	      <strong data-th-text="#{label_lesson_subject}">subject</strong>
+                    <span data-th-text="*{{subject}}">subjectValue</span>
+         	        </li>
+                  <li id="lesson-clazz-field" data-z="9083203b">
+            	      <strong data-th-text="#{label_lesson_clazz}">clazz</strong>
+                    <span data-th-text="*{{clazz}}">clazzValue</span>
+         	        </li>
+                  <li id="lesson-period-field" data-z="14ad04e3">
+            	      <strong data-th-text="#{label_lesson_period}">period</strong>
+                    <span data-th-text="*{{period}}">periodValue</span>
+         	        </li>
+              </ul>
+            </div>
+
+        </div>
+
+      </section>
+      <!-- /CONTENT -->
+  </div>
+  <!-- /CONTAINER -->
+
+  <footer class="container">
+    <!-- Content replaced by layout of the page displayed -->
+  </footer>
+
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so that the pages load faster -->
+  <!-- JavaScript loaded by layout of the page displayed -->
+  <!--
+       Only the inner content of the following tag "javascript" is included
+       within the template, in the div "javascript"
+      -->
+  <div data-layout-fragment="javascript">
+  </div>
+
+  </body>
+
+</html>

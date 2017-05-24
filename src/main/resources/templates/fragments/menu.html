@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page menu</title>
+  </head>
+  <body id="body">
+    <!--
+    Only the internal content of the following div is included within
+    the template, in menu fragment
+    -->
+    <nav class="navbar navbar-default navbar-static-top" data-th-fragment="menu">
+
+         <div class="container">
+
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainnav" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <!-- Brand logo -->
+              <div class="organization-logo navbar-brand">
+                <a title="staffroom" href="/" data-th-href="@{/}">
+                  <img alt="staffroom" data-th-src="@{/public/img/logo.png}" src="../../static/public/img/logo.png" />
+                </a>
+              </div>
+              <!-- Name application -->
+              <div class="application-name navbar-brand hidden-xs">
+                <a data-th-title="#{label_goHome}" href="/" data-th-href="@{/}">staffroom</a>
+              </div>
+
+            </div><!-- /navbar-header -->
+
+            <div id="mainnav" class="navbar-collapse collapse">
+
+              <ul class="nav navbar-nav" id="entitiesMenuEntries">
+                <li class="dropdown" id="clazz-entry" data-z="1a5b3489">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-th-utext="#{label_menu_entry(#{label_clazz})}">Clazz<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+	                   <li><a href="/clazzes/create-form" data-th-href="@{/clazzes/create-form}" data-th-utext="#{label_create_entity(#{label_clazz})}">Create Clazz</a></li>
+	                  <li><a href="/clazzes" data-th-href="@{/clazzes}" data-th-utext="#{label_list_entity(#{label_clazz_plural})}">List Clazz</a></li>
+                 </ul>
+                </li>
+                <li class="dropdown" id="instructor-entry" data-z="b1f690a8">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-th-utext="#{label_menu_entry(#{label_instructor})}">Instructor<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+	                   <li><a href="/instructors/create-form" data-th-href="@{/instructors/create-form}" data-th-utext="#{label_create_entity(#{label_instructor})}">Create Instructor</a></li>
+	                  <li><a href="/instructors" data-th-href="@{/instructors}" data-th-utext="#{label_list_entity(#{label_instructor_plural})}">List Instructor</a></li>
+                 </ul>
+                </li>
+                <li class="dropdown" id="lesson-entry" data-z="c82c8928">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-th-utext="#{label_menu_entry(#{label_lesson})}">Lesson<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+	                   <li><a href="/lessons/create-form" data-th-href="@{/lessons/create-form}" data-th-utext="#{label_create_entity(#{label_lesson})}">Create Lesson</a></li>
+	                  <li><a href="/lessons" data-th-href="@{/lessons}" data-th-utext="#{label_list_entity(#{label_lesson_plural})}">List Lesson</a></li>
+                 </ul>
+                </li>
+                <li class="dropdown" id="period-entry" data-z="d6a2c528">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-th-utext="#{label_menu_entry(#{label_period})}">Period<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+	                   <li><a href="/periods/create-form" data-th-href="@{/periods/create-form}" data-th-utext="#{label_create_entity(#{label_period})}">Create Period</a></li>
+	                  <li><a href="/periods" data-th-href="@{/periods}" data-th-utext="#{label_list_entity(#{label_period_plural})}">List Period</a></li>
+                 </ul>
+                </li>
+                <li class="dropdown" id="room-entry" data-z="e3001768">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-th-utext="#{label_menu_entry(#{label_room})}">Room<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+	                   <li><a href="/rooms/create-form" data-th-href="@{/rooms/create-form}" data-th-utext="#{label_create_entity(#{label_room})}">Create Room</a></li>
+	                  <li><a href="/rooms" data-th-href="@{/rooms}" data-th-utext="#{label_list_entity(#{label_room_plural})}">List Room</a></li>
+                 </ul>
+                </li>
+                <li class="dropdown" id="subject-entry" data-z="f53b75d6">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-th-utext="#{label_menu_entry(#{label_subject})}">Subject<span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+	                   <li><a href="/subjects/create-form" data-th-href="@{/subjects/create-form}" data-th-utext="#{label_create_entity(#{label_subject})}">Create Subject</a></li>
+	                  <li><a href="/subjects" data-th-href="@{/subjects}" data-th-utext="#{label_list_entity(#{label_subject_plural})}">List Subject</a></li>
+                 </ul>
+                </li>
+              </ul>
+
+              <!-- Language select -->
+              <ul class="nav navbar-nav navbar-right upper-nav languages" data-th-replace="~{fragments/languages :: languages}">
+                <!-- Content replaced by the session template fragment language.html
+                -->
+                <span>Language data</span>
+              </ul>
+
+
+
+              <!-- User menu links -->
+              <ul class="nav navbar-nav navbar-right upper-nav links" data-th-replace="~{fragments/session-links :: links}">
+                <!-- Content replaced by the links template fragment session-links.html
+                -->
+                <span>User session data</span>
+              </ul>
+           </div>
+
+          </div>
+    </nav>
+
+    <!--
+    Only the internal content of the following div is included within
+    the template, in menu-languages fragment
+    -->
+    <nav class="navbar navbar-default navbar-static-top" data-th-fragment="menu-languages">
+
+         <div class="container">
+
+            <div class="navbar-header">
+
+              <!-- Brand logo -->
+              <div class="organization-logo navbar-brand">
+                <a title="staffroom" href="/" data-th-href="@{/}">
+                  <img alt="staffroom" data-th-src="@{/public/img/logo.png}" src="../../static/public/img/logo.png" />
+                </a>
+              </div>
+              <!-- Name application -->
+              <div class="application-name navbar-brand hidden-xs">
+                <a data-th-title="#{label_goHome}" href="/" data-th-href="@{/}">staffroom</a>
+              </div>
+
+            </div><!-- /navbar-header -->
+
+            <div id="mainnav" class="navbar-collapse collapse">
+
+              <!-- Language select -->
+              <ul class="nav navbar-nav navbar-right upper-nav languages" data-th-replace="~{fragments/languages :: languages}">
+                <!-- Content replaced by the session template fragment language.html
+                -->
+                <span>Language data</span>
+              </ul>
+
+           </div>
+
+          </div>
+    </nav>
+
+  </body>
+</html>

@@ -2,3 +2,47 @@
 project setup --topLevelPackage by.psu.staffroom --java 8 --projectName staffroom
 // Spring Roo 2.0.0.RC1 [rev 28015e3] log opened at 2017-05-24 21:06:19
 jpa setup --provider HIBERNATE --database POSTGRES --userName postgres --password postgres --databaseName staffroom
+entity jpa --class ~.domain.Room --entityFormatExpression "#{name}"
+field string --fieldName name --notNull --sizeMin 3 --sizeMax 128
+repository jpa --all --package ~.repository
+service --all --apiPackage ~.service.api --implPackage ~.service.impl
+web mvc setup
+web mvc view setup --type THYMELEAF
+web mvc controller --all --responseType THYMELEAF
+entity jpa --class ~.domain.Instructor
+field string --fieldName  firstName --notNull --sizeMin 3 --sizeMax 32
+field string --fieldName lastName --notNull --sizeMin 3 --sizeMax 30
+field string --fieldName patronymic --notNull --sizeMin 3 --sizeMax 30
+field string --fieldName address --notNull --sizeMax 64 --sizeMin 1
+field string --fieldName email --sizeMax 30 --sizeMin 6
+field string --fieldName phone --notNull --sizeMax 30 --sizeMin 6
+field date --fieldName birthDay --type java.util.Date --notNull
+entity jpa --class ~.domain.Subject --entityFormatExpression "#{name}"
+field string --fieldName name --notNull --sizeMin 3 --sizeMax 32
+entity jpa --class ~.domain.Clazz --entityFormatExpression "#{name}"
+field string --fieldName name --notNull --sizeMin 1 --sizeMax 8
+entity jpa --class ~.domain.Period
+field number --fieldName ordinal --type java.lang.Integer --notNull --min 1
+field date --fieldName startTime --type java.util.Date --notNull
+field date --fieldName endTime --type java.util.Date --notNull
+entity jpa --class ~.domain.Lesson
+// [failed] field date --fieldName day --type java.util.Date --notNull
+field date --fieldName day --type java.util.Date --notNull --permitReservedWords 
+repository jpa --all --package ~.repository
+service --all --apiPackage ~.service.api --implPackage ~.service.impl
+web mvc controller --all --responseType THYMELEAF
+focus --class ~.domain.Instructor
+field set --fieldName lessons --type ~.domain.Lesson --cardinality ONE_TO_MANY --mappedBy instructor
+focus --class ~.domain.Room
+field set --fieldName lessons --type ~.domain.Lesson --cardinality ONE_TO_MANY --mappedBy room
+focus --class ~.domain.Subject
+field set --fieldName lessons --type ~.domain.Lesson --cardinality ONE_TO_MANY --mappedBy subject
+focus --class ~.domain.Clazz
+field set --fieldName lessons --type ~.domain.Lesson --cardinality ONE_TO_MANY --mappedBy clazz
+focus --class ~.domain.Period
+field set --fieldName lessons --type ~.domain.Lesson --cardinality ONE_TO_MANY --mappedBy period
+!g lb
+addon list 
+field date --fieldName endTime --type java.util.Date --notNull --dateTimeFormatPattern hh:mm
+field date --fieldName startTime --type java.util.Date --notNull --dateTimeFormatPattern hh:mm
+// Spring Roo 2.0.0.RC1 [rev 28015e3] log closed at 2017-05-24 23:42:19

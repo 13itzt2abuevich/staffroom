@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-decorate="~{layouts/default-list-layout}">
+  <head id="head">
+
+    <title data-th-text="|#{label_show_entity(#{label_instructor})}|">Show Instructor - Spring Roo application</title>
+
+  </head>
+
+  <body id="body">
+
+    <header role="banner">
+      <!-- Content replaced by layout of the page displayed -->
+    </header>
+
+    <!--CONTAINER-->
+    <div class="container bg-container">
+      <!-- CONTENT -->
+      <!--
+        Only the inner content of the following tag "section" is included
+        within the template, in the section "content"
+      -->
+      <section data-layout-fragment="content" data-th-object="${instructor}">
+        <div class="container-fluid content">
+
+          <!-- CONTENT -->
+          <h1 data-th-text="#{label_show_entity(#{label_instructor})}">Show Instructor</h1>
+
+            <div id="mainEntityFieldSet">
+              <h2 data-th-text="#{label_data_entity(#{label_instructor})}">Instructor data</h2>
+              <ul class="list-unstyled" id="containerFields">
+                  <li id="instructor-firstname-field" data-z="2d9ca6f6">
+            	      <strong data-th-text="#{label_instructor_firstname}">firstName</strong>
+                    <span data-th-text="*{{firstName}}">firstNameValue</span>
+         	        </li>
+                  <li id="instructor-lastname-field" data-z="62bf87a8">
+            	      <strong data-th-text="#{label_instructor_lastname}">lastName</strong>
+                    <span data-th-text="*{{lastName}}">lastNameValue</span>
+         	        </li>
+                  <li id="instructor-patronymic-field" data-z="267b4de8">
+            	      <strong data-th-text="#{label_instructor_patronymic}">patronymic</strong>
+                    <span data-th-text="*{{patronymic}}">patronymicValue</span>
+         	        </li>
+                  <li id="instructor-address-field" data-z="84425176">
+            	      <strong data-th-text="#{label_instructor_address}">address</strong>
+                    <span data-th-text="*{{address}}">addressValue</span>
+         	        </li>
+                  <li id="instructor-email-field" data-z="67f6f636">
+            	      <strong data-th-text="#{label_instructor_email}">email</strong>
+                    <span data-th-text="*{{email}}">emailValue</span>
+         	        </li>
+                  <li id="instructor-phone-field" data-z="b8a003f6">
+            	      <strong data-th-text="#{label_instructor_phone}">phone</strong>
+                    <span data-th-text="*{{phone}}">phoneValue</span>
+         	        </li>
+                  <li id="instructor-birthday-field" data-z="7c070fe8">
+            	      <strong data-th-text="#{label_instructor_birthday}">birthDay</strong>
+                    <span data-th-text="*{{birthDay}}">birthDayValue</span>
+         	        </li>
+              </ul>
+            </div>
+
+
+          <div class="clearfix">
+            <div class="pull-right">
+             <a id="Instructor_edit" href="edit.html" class="btn btn-primary" data-th-title="#{label_goEdit}" data-th-href="${@linkBuilder.of('InstructorsItemThymeleafController').to('editForm').with('instructor', instructor.id)}" data-th-text="#{label_edit}">Edit</a>
+            </div>
+          </div>
+
+
+          <div class="clearfix">
+            <div class="pull-left">
+              <a id="Instructor_list" href="list.html" class="btn btn-default" data-th-title="#{label_goBack}" data-th-href="${@linkBuilder.of('InstructorsCollectionThymeleafController').to('list')}">
+  	             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+  	             <span data-th-text="#{label_back}">Back</span>
+  	          </a>
+            </div>
+          </div>
+        </div>
+
+      </section>
+      <!-- /CONTENT -->
+  </div>
+  <!-- /CONTAINER -->
+
+  <footer class="container">
+    <!-- Content replaced by layout of the page displayed -->
+  </footer>
+
+  <!-- JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so that the pages load faster -->
+  <!-- JavaScript loaded by layout of the page displayed -->
+  <!--
+       Only the inner content of the following tag "javascript" is included
+       within the template, in the div "javascript"
+      -->
+  <div data-layout-fragment="javascript">
+  </div>
+
+  </body>
+
+</html>
