@@ -1,2 +1,4 @@
 // Spring Roo 2.0.0.RC1 [rev 28015e3] log opened at 2017-05-24 19:55:11
 project setup --topLevelPackage by.psu.staffroom --java 8 --projectName staffroom
+// Spring Roo 2.0.0.RC1 [rev 28015e3] log opened at 2017-05-24 21:06:19
+jpa setup --provider HIBERNATE --database POSTGRES --userName postgres --password postgres --databaseName staffroom
